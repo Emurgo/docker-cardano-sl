@@ -27,7 +27,7 @@ RUN git clone https://github.com/input-output-hk/cardano-sl.git && \
     cd cardano-sl && \
     git checkout ${CARDANO_SL_GIT_COMMIT}
 WORKDIR /opt/cardano-sl
-VOLUME ["/opt/cardano-sl/state-explorer-${CARDANO_NET}/logs"]
+VOLUME ["/opt/cardano-sl/state-explorer-${CARDANO_NET}"]
 
 # Setup cardano-sl
 ENV CARDANO_NET ${CARDANO_NET}
