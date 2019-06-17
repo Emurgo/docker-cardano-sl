@@ -1,4 +1,9 @@
 #!/bin/sh
 
 sed -i "s|127.0.0.1:8000|${LISTEN_ADDR}|g" connect-explorer-to-${CARDANO_NET}
-. connect-explorer-to-${CARDANO_NET}
+if [ "${DEBUG}" == "true" ]
+then
+  . connect-explorer-to-${CARDANO_NET}
+else
+  . connect-explorer-to-${CARDANO_NET} | grep -v "Debug\|GET\|Accept\|Params\|Status"
+fi
