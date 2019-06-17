@@ -5,12 +5,14 @@ Execute from git repository root
 ## Mainnet
 ```
 docker build \
+  --build-arg BUILD_TIMESTAMP=$(date +%s)
   --build-arg CARDANO_NET=mainnet \
   -t emurgornd/cardano-sl:mainnet .
 ```
 ## Testnet
 ```
 docker build \
+  --build-arg BUILD_TIMESTAMP=$(date +%s)
   --build-arg CARDANO_NET=testnet \
   -t emurgornd/cardano-sl:testnet .
 ```
@@ -19,6 +21,7 @@ docker build \
 for network in testnet mainnet
 do
   docker build \
+    --build-arg BUILD_TIMESTAMP=$(date +%s)
     --build-arg CARDANO_NET=${network} \
     -t emurgornd/cardano-sl:${network} .
 done
