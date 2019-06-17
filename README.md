@@ -6,13 +6,13 @@ Execute from git repository root
 ```
 docker build \
   --build-arg CARDANO_NET=mainnet \
-  -t emurgo/cardano-sl:mainnet .
+  -t emurgornd/cardano-sl:mainnet .
 ```
 ## Testnet
 ```
 docker build \
   --build-arg CARDANO_NET=testnet \
-  -t emurgo/cardano-sl:testnet .
+  -t emurgornd/cardano-sl:testnet .
 ```
 ## Both at once
 ```
@@ -20,7 +20,7 @@ for network in testnet mainnet
 do
   docker build \
     --build-arg CARDANO_NET=${network} \
-    -t emurgo/cardano-sl:${network} .
+    -t emurgornd/cardano-sl:${network} .
 done
 ```
 
@@ -32,7 +32,7 @@ docker run -it \
   -p 8000:8000 \
   -p 8100:8100 \
   -p 8110:8110 \
-  emurgo/cardano-sl:${CARDANO_NET}
+  emurgornd/cardano-sl:${CARDANO_NET}
 ```
 
 You'll be able to access to:
